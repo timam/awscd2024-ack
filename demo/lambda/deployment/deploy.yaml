@@ -8,6 +8,6 @@ spec:
   name: demo-awscd-2024
   packageType: Image
   code:
-    imageURI: 590184123335.dkr.ecr.ap-southeast-1.amazonaws.com/demo-awscd-2024:02114c130a666742be52b1783899a35e70fd6d74
+    imageURI: 590184123335.dkr.ecr.ap-southeast-1.amazonaws.com/demo-awscd-2024:b8b63e8c410a42cfb1b06eb2e6b2920525c970f3
   role: arn:aws:iam::590184123335:role/lambda_basic_execution
   description: awscd demo lambda with ack
