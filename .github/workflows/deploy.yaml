@@ -27,3 +27,9 @@ jobs:
           cd demo/lambda/src
           docker build -t ${{ steps.login-ecr.outputs.registry }}/demo-awscd-2024:$GITHUB_SHA -f Dockerfile .
           docker push ${{ steps.login-ecr.outputs.registry }}/demo-awscd-2024:$GITHUB_SHA
+
+      - name: Replace the Docker image tag with Git SHA in deploy.yaml
+        run: |
+          export GIT_SHA=$(echo $GITHUB_SHA | cut -c1-8)
+          sed -i "s/:.*/:$GIT_SHA/" demo/lambda/deployment/deploy.yaml
+          
