@@ -3,10 +3,14 @@ on:
   push:
     branches:
       - main
+    paths:
+      - 'demo/lambda/src/**'
+      -
 jobs:
   build:
     runs-on: ubuntu-latest
     name: build docker image
+
     steps:
       - name: Git Checkout
         uses: actions/checkout@v4
@@ -32,4 +36,10 @@ jobs:
         run: |
           export GIT_SHA=$(echo $GITHUB_SHA | cut -c1-8)
           sed -i "s/:.*/:$GIT_SHA/" demo/lambda/deployment/deploy.yaml
-          
+
+      - name: Add & Commit changes
+        uses: EndBug/add-and-commit@v9
+        with:
+          message: "Update deploy.yaml with the latest image tag"
+          add: 'demo/lambda/deployment/deploy.yaml'
+          default_author: github_actions
