@@ -1,13 +1,13 @@
-apiVersion:5c786852
-kind:5c786852
-metadata:5c786852
-  name:5c786852
-  annotations:5c786852
-    services.k8s.aws/region:5c786852
-spec:5c786852
-  name:5c786852
-  packageType:5c786852
-  code:5c786852
-    imageURI:5c786852
-  role:5c786852
-  description:5c786852
+apiVersion: lambda.services.k8s.aws/v1alpha1
+kind: Function
+metadata:
+  name: demo-awscd-2024
+  annotations:
+    services.k8s.aws/region: ap-southeast-1
+spec:
+  name: demo-awscd-2024
+  packageType: Image
+  code:
+    imageURI: 590184123335.dkr.ecr.ap-southeast-1.amazonaws.com/demo-awscd-2024:02114c130a666742be52b1783899a35e70fd6d74
+  role: arn:aws:iam::590184123335:role/lambda_basic_execution
+  description: awscd demo lambda with ack

@@ -36,8 +36,8 @@ jobs:
 
       - name: Replace the Docker image tag with Git SHA in deploy.yaml
         run: |
-          export GIT_SHA=$(echo $GITHUB_SHA | cut -c1-8)
-          sed -i "s/:.*/:$GIT_SHA/" demo/lambda/deployment/deploy.yaml
+          GIT_SHA=$GITHUB_SHA
+          sed -i.bak "s#demo-awscd-2024:.*#demo-awscd-2024:$GIT_SHA#g" demo/lambda/deployment/deploy.yaml
 
       - name: Add & Commit changes
         uses: EndBug/add-and-commit@v9
