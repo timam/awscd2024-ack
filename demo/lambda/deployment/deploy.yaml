@@ -8,7 +8,6 @@ spec:
   name: demo-awscd-2024
   description: awscd demo lambda with ack
   packageType: Image
-  runtime: nodejs20.x
   memorySize: 512
   code:
     imageURI: 590184123335.dkr.ecr.ap-southeast-1.amazonaws.com/demo-awscd-2024:b8b63e8c410a42cfb1b06eb2e6b2920525c970f3
