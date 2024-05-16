@@ -10,6 +10,10 @@ resource "helm_release" "ack" {
       enabled: true
       aws:
         region: "ap-southeast-1"
+    lambda:
+      enabled: true
+      aws:
+        region: "ap-southeast-1"
     EOF
   ]
 }
