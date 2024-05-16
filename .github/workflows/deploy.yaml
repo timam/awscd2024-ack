@@ -25,5 +25,5 @@ jobs:
       - name: Build, tag, and push image to Amazon ECR
         run: |
           cd demo/lambda/src
-          docker build -t ${{ env.ECR_REGISTRY }}/${{ env.ECR_REPOSITORY }}:$GITHUB_SHA -f Dockerfile .
-          docker push ${{ env.ECR_REGISTRY }}/${{ env.ECR_REPOSITORY }}:$GITHUB_SHA
+          docker build -t ${{ steps.login-ecr.outputs.registry }}/demo-awscd-2024:$GITHUB_SHA -f Dockerfile .
+          docker push ${{ steps.login-ecr.outputs.registry }}/demo-awscd-2024:$GITHUB_SHA
