@@ -10,5 +10,5 @@ spec:
   packageType: Image
   memorySize: 512
   code:
-    imageURI: 590184123335.dkr.ecr.ap-southeast-1.amazonaws.com/demo-awscd-2024:b8b63e8c410a42cfb1b06eb2e6b2920525c970f3
+    imageURI: 590184123335.dkr.ecr.ap-southeast-1.amazonaws.com/demo-awscd-2024:0ff75790d9d84628ab76980612600bb03c3e8017
   role: arn:aws:iam::590184123335:role/lambda_basic_execution
